@@ -21,8 +21,13 @@ public class ScanerExpection {
         while (true){
             String line = ss.nextLine();
 
+            double price = Double.parseDouble(line);
+
             try {
-                return Double.parseDouble(line);
+
+                if (price >0 ) {
+                    return price;}
+                else {System.out.println("Ошибка: введите числовое НЕ отрицательное значение");}
 
             } catch (NumberFormatException e){
                 System.out.println("Ошибка: введите числовое значение");

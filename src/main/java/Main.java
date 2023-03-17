@@ -47,7 +47,7 @@ public class Main {
                     System.out.println("Введите название товара и в следующей строке цену.\n " +
                             "Для завершения введите 'Завершить'");
 
-                    string = scanner.next();
+                    string = scanner.nextLine();
 
                     //вызов калькулятора для расчетов и финального вывода результатов
                     if(string.equalsIgnoreCase("завершить")){
