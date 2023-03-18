@@ -4,12 +4,12 @@ public class ScanerExpection {
 
     public int readInt(Scanner s, String massege) {
         System.out.println(massege);
-        while (true){
+        while (true) {
             String line = s.nextLine();
 
             try {
                 return Integer.parseInt(line);
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Ошибка: введите числовое ЦЕЛОЕ значение");
             }
         }
@@ -18,24 +18,22 @@ public class ScanerExpection {
 
     public double readDobl(Scanner ss) {
 
-        while (true){
+        while (true) {
             String line = ss.nextLine();
 
-            double price = Double.parseDouble(line);
-
             try {
+                double price = Double.parseDouble(line);
 
-                if (price >0 ) {
-                    return price;}
-                else {System.out.println("Ошибка: введите числовое НЕ отрицательное значение");}
+                if (price > 0) {
+                    return price;
+                } else {
+                    System.out.println("Ошибка: введите числовое НЕ отрицательное значение");
+                }
 
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Ошибка: введите числовое значение");
             }
         }
     }
-
-
-
 
 }

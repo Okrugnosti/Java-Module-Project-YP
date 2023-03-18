@@ -3,50 +3,45 @@ public class PrintRur {
     int lastCharacter = 0;
     String str;
 
-    public String printRur(double chisl_o){
+    public String printRur2(double chisl_o) {
 
+        int chisl = (int) Math.floor(chisl_o);
+        //System.out.println(chisl + "__");
 
-        int chislo = (int)chisl_o;
+        int ostatoc = (chisl) % 100 / 10;
+        //System.out.println(ostatoc + "___");
 
-        //System.out.println(chislo);
+        if (ostatoc == 1) {
+            return "рублей";
+        }
 
-        //последняя цифра
-        //1 21 31 рубль
-        //2 3 4 22-24 рубля
-        //5 6 7 8 9 10 11 95-99 рублей
+        switch (chisl % 10) {
+            case 1:
+                return "рубль";
 
-            if ((chislo / 1) == 11 || (chislo / 1) == 14){
+            case 2:
+            case 3:
+            case 4:
+                return "рубля";
 
-                str = "рублей";
+            default:
+                return "рублей";
 
-            } else {
+        }
+    }
 
-                lastCharacter = chislo % 10;
+    //скрытый метод для тестирования окончаний "Руб."
+    public void testPrintRur() {
 
-                switch (lastCharacter) {
+        double i = 0;
 
-                    case 1:
-                        str = "рубль";
-                        break;
+        for (i = 0; i < 120; i = i + 0.1) {
 
-                    case 2:
-                    case 3:
-                    case 4:
-                        str = "рубля";
-                        break;
+            //System.out.println(i + "_");
+            printRur2(i);
 
-                    case 0:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                        //11 рублей
-                        //14 рублей
-                        str = "рублей";
-                        break;
-                }
-            }
-        return str;
+            System.out.println(String.format("%.2f ", i) + printRur2(i));
+
+        }
     }
 }

@@ -4,13 +4,12 @@ public class Calc {
 
     int countCompany;
 
-    public void setCount_company(int countCompany) {
+    public void setCountCompany(int countCompany) {
         this.countCompany = countCompany;
     }
 
-    public double calcCompany(double summ){
+    public double calcCompany(double summ) {
 
         return summ / countCompany;
     }
-
 }
